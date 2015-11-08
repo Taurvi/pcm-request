@@ -1,0 +1,22 @@
+{
+  "name": "PCM-Request",
+  "version": "1.0.0",
+  "description": "A system for handling PCM branding/IT requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taurvi/pcm-request"
+  },
+  "author": "Stephen 'Taurvi' Rimbakusumo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taurvi/pcm-request/issues"
+  },
+  "homepage": "https://github.com/taurvi/pcm-request",
+  "dependencies": {
+    "socket.io": "^1.3.7"
+  }
+}
