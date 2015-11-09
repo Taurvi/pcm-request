@@ -1,0 +1,75 @@
+<div class="col-sm-8 center-block" style="border: red 1px solid">
+    <div class="row text-center">
+        <img class="logo" src="img/pcm-logo.png">
+        <h3>Department Request Form</h3>
+    </div>
+
+    <div class="row" ng-show="!loggedIn">
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            You need to log into Trello in order to use this request system.
+        </div>
+    </div>
+
+
+    <form role="form" ng-show="loggedIn">
+        <div class="form-group">
+            <label for="fieldTitle">Title:</label>
+            <input class="form-control" type="text" id="fieldTitle" name="fieldTitle" ng-model="ngFieldTitle" required>
+            <!--<p class="help-block">Please provide a meaningful title for your request.</p>-->
+        </div>
+
+        <div class="form-group">
+            <label for="fieldDesc">Description:</label>
+            <textarea class="form-control" id="fieldDesc" name="fieldDesc" ng-model="ngFieldDesc" rows="7" required></textarea>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="fieldRequestDept">From which department is this request coming from?</label>
+                    <select class="form-control" id="fieldRequestDept" name="fieldRequestDept" ng-model="ngFieldRequestDept" size="9" required>
+                        <option style="display:none" value=""></option>
+                        <option value="Executive">Executive</option>
+                        <option value="Branding">Branding</option>
+                        <option value="eSports">Collegiate eSports</option>
+                        <option value="Competitive">Competitive</option>
+                        <option value="Internal Affairs">Internal Affairs</option>
+                        <option value="IT Engineering">IT Engineering</option>
+                        <option value="Professional Development">Professional Development</option>
+                        <option value="Social">Social Programming</option>
+                        <option value="Treasury">Treasury</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="fieldSendDept">To which department(s) should this request going to?</label>
+                    <select multiple class="form-control" id="fieldSendDept" name="fieldSendDept" ng-model="ngFieldSendDept" size="9" ng-multiple="true" required>
+                        <option ng-disabled="ngFieldRequestDept == 'Executive'" value="Executive">Executive</option>
+                        <option ng-disabled="ngFieldRequestDept == 'Branding'"value="Branding">Branding</option>
+                        <option ng-disabled="ngFieldRequestDept == 'eSports'" value="eSports">Collegiate eSports</option>
+                        <option ng-disabled="ngFieldRequestDept == 'Competitive'"value="Competitive">Competitive</option>
+                        <option ng-disabled="ngFieldRequestDept == 'Internal Affairs'"value="Internal Affairs">Internal Affairs</option>
+                        <option ng-disabled="ngFieldRequestDept == 'IT Engineering'"value="IT Engineering">IT Engineering</option>
+                        <option ng-disabled="ngFieldRequestDept == 'Professional Development'"value="Professional Development">Professional Development</option>
+                        <option ng-disabled="ngFieldRequestDept == 'Social'"value="Social">Social Programming</option>
+                        <option ng-disabled="Treasury == 'eSports'"value="Treasury">Treasury</option>
+                    </select>
+                </div>
+                <!--Debug: {{parseToFrom()}}-->
+            </div>
+            <div class="text-center">
+                <button class="btn btn-lg btn-success" ng-click="submitTrello()">Submit</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </form>
+</div>

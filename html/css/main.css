@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.center-block {
+    float: none;
+}
+
+.logo {
+    height: 96px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+.help-block {
+    font-style: italic;
+}

@@ -21,7 +21,13 @@ var t = new Trello("<your key>", "<token>");
 
 serverMsg('Server has initialized!');
 
+var loggedUsers = [];
+
 // User connects to socketIO
 io.sockets.on('connection', function(socket){
+    serverMsg('  io.sockets.on: User has connected: ' + socket.id);
 
+    socket.on('verifyUser', function(data){
+        serverMsg('  io.sockets.on: Form data received.');
+    });
 });
